@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPloteAutoBuild", "XPloteAutoBuild\XPloteAutoBuild.csproj", "{BA1EA5F5-2DA0-4675-9AC4-A13F69475498}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CppSharpTool", "XPloteAutoBuild\CppSharpTool.csproj", "{BA1EA5F5-2DA0-4675-9AC4-A13F69475498}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "共享数据", "共享数据\共享数据.shproj", "{DB7A32F1-F83A-42B0-8A54-BD809409B8DA}"
 EndProject
