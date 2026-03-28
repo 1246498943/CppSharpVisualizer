@@ -180,6 +180,7 @@ namespace XPloteAutoBuild
         private void initModelSource()
         {
             //语言列表
+#if false
             gAutoModel?.gLanguageLists.Clear();
             var languagelists = Enum.GetValues(typeof(GeneratorKind));
             foreach (var languagelist in languagelists)
@@ -193,7 +194,33 @@ namespace XPloteAutoBuild
             foreach (var cppitem in cpplists)
             {
                 gAutoModel?.gCppVersionLists.Add(cppitem.ToString());
+            } 
+
+#else
+            // --- 语言列表 (GeneratorKind) ---
+            gAutoModel?.gLanguageLists.Clear();
+
+            // 直接遍历 GeneratorKind 类中的 Registered 静态集合
+            foreach (var generatorKind in GeneratorKind.Registered)
+            {
+                // 您可以选择添加 ID (如 "CSharp") 或 Name (如 "C#") 到列表中
+                // 这里以添加更友好的 Name 为例
+                gAutoModel?.gLanguageLists.Add(generatorKind.Name);
+
+                // 如果您的UI需要对应的值是ID，可以这样做：
+                // gAutoModel?.gLanguageLists.Add(generatorKind.ID);
             }
+
+            // --- C++版本列表 (LanguageVersion) ---
+            // 假设 LanguageVersion 仍然是一个枚举，这段代码保持不变
+            gAutoModel?.gCppVersionLists.Clear();
+            var cpplists = Enum.GetValues(typeof(LanguageVersion));
+            foreach (var cppitem in cpplists)
+            {
+                gAutoModel?.gCppVersionLists.Add(cppitem.ToString());
+            }
+
+#endif
         }
         #region 辅助类.
         private void GetError(Action action)

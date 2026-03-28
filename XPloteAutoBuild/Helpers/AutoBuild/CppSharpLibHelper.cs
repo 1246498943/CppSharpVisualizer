@@ -129,9 +129,11 @@ namespace XPloteAutoBuild
 
         public void Setup(Driver driver)
         {
-            //driver.Options.GeneratorKind = GeneratorKind.CSharp;
-            //driver.Options.OutputDir = buildData.gOutCsharpLibPath;
-            GeneratorKind gk = Enum.Parse<GeneratorKind>(buildData.gSelectedLanguage.Trim());
+            // 将以下代码：
+            // GeneratorKind gk = Enum.Parse<GeneratorKind>(buildData.gSelectedLanguage.Trim());
+
+            // 替换为：
+            GeneratorKind gk = GeneratorKind.FindGeneratorKindByID(buildData.gSelectedLanguage.Trim());
             driver.Options.GeneratorKind =gk;
             driver.Options.OutputDir = buildData.gOutCsharpLibPath;
 
